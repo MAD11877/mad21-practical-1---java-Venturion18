@@ -33,7 +33,7 @@ public class Question5
     ArrayList<Integer> numlist = new ArrayList<>();
 
     while (num > 0) {
-      System.out.println("Enter integer: ");
+      //System.out.println("Enter integer: ");
       int inte = in.nextInt();
       num -= 1;
       numlist.add(inte);
@@ -53,6 +53,6 @@ public class Question5
         numocc = count;
       }
     }
-    System.out.println("Mode: "+h_occ_num);
+    System.out.println(h_occ_num);
   }
 }
