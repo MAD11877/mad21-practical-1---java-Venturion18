@@ -18,6 +18,15 @@ public class Question4
      */
      
     Scanner in = new Scanner(System.in);
-    
+    //System.out.println("Enter length of base: ");
+    int base = in.nextInt();
+    for (int i = base; i > 0; i--){
+      String line = "";
+      for (int x = i; x > 0; x--){
+          line += "*";
+      }
+      System.out.println(line);
+    }
   }
 }
+
