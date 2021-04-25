@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import java.util.*;
+import java.util.ArrayList;
 
 public class Question5
 {
@@ -28,30 +28,31 @@ public class Question5
      */
      
     Scanner in = new Scanner(System.in);
-    System.out.println("Enter number of integers: ");
+    //System.out.println("Enter number of integers: ");
     int num = in.nextInt();
-    int a[] = new int[0];
-    List<Integer> numlist = new ArrayList<Integer>();
+    ArrayList<Integer> numlist = new ArrayList<>();
+
     while (num > 0) {
       System.out.println("Enter integer: ");
       int inte = in.nextInt();
       num -= 1;
       numlist.add(inte);
     }
-    System.out.println(numlist[0],numlist[1]);
     int h_occ_num = 0;
     int numocc = 0;
-    for (int x = numlist.size(); x > 0;){
-        int occurrences = Collections.frequency(numlist, numlist[x]);
-        if (occurrences > numocc){
-          h_occ_num = numlist[x];
+    for (int x : numlist){
+      int count = 0;
+      //int test = 0;
+      for (int i : numlist){
+        if (i == x){
+          count += 1;
         }
-        numlist.removeAll(Collections.singleton(x));
       }
+      if (count > numocc){
+        h_occ_num = numlist.get(x);
+        numocc = count;
+      }
+    }
     System.out.println("Mode: "+h_occ_num);
-    /*for (int i = numlist.size(); i > 0; i--){
-      
-      
-    }*/
   }
 }
